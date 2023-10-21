@@ -1,11 +1,14 @@
 const Name = document.getElementById("username");
 const Email = document.getElementById("email");
 const Password = document.getElementById("password");
-const Users = [];
 
-document.getElementById("signup-form").addEventListener("submit", (event) => {
-  if (!validate()) {
-    event.preventDefault();
+const signupForm = document.getElementById("signupform");
+
+signupForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  if (validate()) {
+    signup();
   }
 });
 
@@ -66,14 +69,37 @@ function isValidEmail(email) {
   return /^[a-zA-Z0-9._+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email);
 }
 
+let user = null;
+const successModal = new bootstrap.Modal(
+  document.getElementById("successModal")
+);
+
 function signup() {
-  let Name1 = Name.value;
-  let Email1 = Email.value;
-  let Password1 = Password.value;
+  const Name1 = Name.value;
+  const Email1 = Email.value;
+  const Password1 = Password.value;
+
   if (Name1 && Email1 && Password1) {
-    const user = { Name: Name1, Email: Email1, Password: Password1 };
-    Users.push(user);
+    user = { Name: Name1, Email: Email1, Password: Password1 }; // Store user details in an object
+    popup();
+
+    console.log(
+      `Name: ${user.Name}, Email: ${user.Email}, Password: ${user.Password}`
+    );
   } else {
     console.log("errrrrrrrrrrrrrrrrrrrr");
   }
 }
+
+function popup() {
+  if (user) {
+    successModal.show();
+    signupForm.reset();
+  }
+}
+
+const closeButton = document.querySelector("#closeButton");
+closeButton.addEventListener("click", function () {
+  successModal.hide();
+  window.location.href = "login.html";
+});

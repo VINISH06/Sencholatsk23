@@ -1,3 +1,12 @@
+* {
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+}
+body {
+  background: beige;
+}
+
 .form-group .error {
   color: red;
   font-size: 16px;
@@ -11,7 +20,11 @@
 .form-group .success input {
   border: green !important;
 }
-body {
-  background: #0988c6;
-  background: linear-gradient(135deg, #0988c6, #9f19ae);
+.login-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 100px;
 }

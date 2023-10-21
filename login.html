@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 
     <style>
@@ -16,28 +17,37 @@
             border-radius: 5px;
             margin-top: 100px;
         }
+
+        body {
+            background-color: beige;
+        }
+
+        .failed {
+            color: red;
+        }
     </style>
 </head>
 
 <body>
-    <div class="container shadow rounded">
-        <div class="login-container">
+    <div class="container">
+        <div class="login-container shadow rounded">
             <h2 class="text-center">Login</h2>
-            <form id="login-form" onsubmit="login(); return false;">
+            <form id="login-form">
                 <div class="form-group">
-                    <label for="username">User</label>
+                    <label for="username">Username</label>
                     <input type="text" class="form-control" id="username" placeholder="Enter your username">
                 </div>
-                <div class="error"></div>
                 <div class="form-group">
-                    <label for="password">Email</label>
-                    <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                    <label for="email">Email</label>
+                    <input type="text" class="form-control" id="email" placeholder="Enter your email">
                 </div>
-                <div class="error"></div>
-                <button type="submit" class="btn btn-primary btn-block">Login</button>
+
+                <button type="submit" class="btn btn-primary btn-block mt-5 mb-5">Login</button>
+                <div class="failed"></div>
             </form>
         </div>
     </div>
+
 
     <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel"
         aria-hidden="true">
@@ -45,21 +55,21 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="successModalLabel">Login Successful</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
                 </div>
                 <div class="modal-body">
                     <p>You have successfully logged in!</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger " id="closeButton" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
     </div>
 
-
+    <!-- Include Bootstrap JS if needed -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
-    <script src="./Assets/main.js" defer>
-
+    <script src="./Assets/login.js" defer>
+        // JavaScript for handling successful login and displaying the modal
 
     </script>
 </body>
