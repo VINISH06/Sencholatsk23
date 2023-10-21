@@ -2,6 +2,7 @@ const Name = document.getElementById("username");
 const Email = document.getElementById("email");
 const Password = document.getElementById("password");
 
+let user = null;
 const signupForm = document.getElementById("signupform");
 
 signupForm.addEventListener("submit", (event) => {
@@ -69,7 +70,6 @@ function isValidEmail(email) {
   return /^[a-zA-Z0-9._+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email);
 }
 
-let user = null;
 const successModal = new bootstrap.Modal(
   document.getElementById("successModal")
 );
