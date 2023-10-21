@@ -1,0 +1,40 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+body {
+
+background: #3E6BDC;
+background: linear-gradient(135deg, #3E6BDC, #3B9198);
+}
+
+section {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.notice-board {
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  padding: 10px;
+  overflow: hidden;
+  height: 400px;
+}
+
+.notice-content {
+  animation: scroll 1000s linear infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-100%);
+  }
+}

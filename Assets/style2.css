@@ -1,0 +1,17 @@
+.form-group .error {
+  color: red;
+  font-size: 16px;
+  margin-top: 2px;
+  margin-left: 20px;
+}
+.form-group .error input {
+  border: red !important;
+}
+
+.form-group .success input {
+  border: green !important;
+}
+body {
+  background: #0988c6;
+  background: linear-gradient(135deg, #0988c6, #9f19ae);
+}
