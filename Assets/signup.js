@@ -80,7 +80,7 @@ function signup() {
   const Password1 = Password.value;
 
   if (Name1 && Email1 && Password1) {
-    user = { Name: Name1, Email: Email1, Password: Password1 }; // Store user details in an object
+    user = { Name: Name1, Email: Email1, Password: Password1 };
     popup();
 
     console.log(
@@ -101,5 +101,6 @@ function popup() {
 const closeButton = document.querySelector("#closeButton");
 closeButton.addEventListener("click", function () {
   successModal.hide();
-  window.location.href = "login.html";
+  window.location.href = "index.html";
 });
+/////////////////////////////////////////////////////////////////////
